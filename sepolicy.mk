@@ -2,14 +2,10 @@
 BOARD_VENDOR_SEPOLICY_DIRS += \
     device/qcom/sepolicy-legacy/common \
     device/qcom/sepolicy-legacy/ssg \
+    device/qcom/sepolicy-legacy/test \
     device/qcom/sepolicy-legacy/$(TARGET_BOARD_PLATFORM)
 
-ifneq (,$(filter userdebug eng, $(TARGET_BUILD_VARIANT)))
-BOARD_VENDOR_SEPOLICY_DIRS += \
-    device/qcom/sepolicy-legacy/test
-
 SELINUX_IGNORE_NEVERALLOWS := true
-endif
 
 BOARD_PLAT_PUBLIC_SEPOLICY_DIR += \
     device/qcom/sepolicy-legacy/public
